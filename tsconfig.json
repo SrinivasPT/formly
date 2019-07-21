@@ -11,12 +11,13 @@
     "experimentalDecorators": true,
     "importHelpers": true,
     "target": "es2015",
-    "typeRoots": [
-      "node_modules/@types"
-    ],
-    "lib": [
-      "es2018",
-      "dom"
-    ]
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2018", "dom"],
+    "paths": {
+      "edge": ["projects/edge/src/public_api", "dist/edge"],
+      "edge/*": ["projects/edge/src/public_api", "dist/edge/*"],
+      "ngx-formly-kendo": ["projects/ngx-formly-kendo/src/public_api", "dist/ngx-formly-kendo"],
+      "ngx-formly-kendo/*": ["projects/ngx-formly-kendo/src/public_api", "dist/ngx-formly-kendo/*"]
+    }
   }
 }

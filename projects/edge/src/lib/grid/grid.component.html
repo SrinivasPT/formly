@@ -1,0 +1,15 @@
+<kendo-grid
+  #grid
+  [data]="gridSettings.gridView"
+  [pageable]="true"
+  [pageSize]="gridSettings.pageSize"
+  [skip]="gridSettings.skip"
+  (pageChange)="pageChange($event)"
+>
+  <kendo-grid-column title="Edit">
+    <ng-template kendoGridCellTemplate let-dataItem>
+      <button kendoGridEditCommand type="button" (click)="onRowEdit(dataItem)">Edit</button>
+      <button kendoGridEditCommand type="button" (click)="onRowRemove(dataItem)">Remove</button>
+    </ng-template>
+  </kendo-grid-column>
+</kendo-grid>

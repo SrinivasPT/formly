@@ -1,0 +1,22 @@
+import { Component } from '@angular/core';
+import { FieldType } from '@ngx-formly/core';
+
+@Component({
+  // tslint:disable-next-line: component-selector
+  selector: 'formly-field-kendo-input',
+  template: `
+    <input
+      *ngIf="to.type !== 'number'; else numberTmp"
+      [type]="to.type || 'text'"
+      [formControl]="formControl"
+      class="k-textbox col-md-12"
+      [formlyAttributes]="field"
+      [class.k-state-invalid]="showError"
+    />
+    <ng-template #numberTmp>
+      <input type="number" [formControl]="formControl" class="k-textbox" [formlyAttributes]="field" [class.k-state-invalid]="showError" />
+    </ng-template>
+  `
+})
+// tslint:disable-next-line: component-class-suffix
+export class FormlyFieldInput extends FieldType {}
